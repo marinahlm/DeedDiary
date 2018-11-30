@@ -1,5 +1,4 @@
 # DeedDiary
-
  
 
 Project Proposal: Deed Diary
@@ -74,15 +73,15 @@ Users’ commitment - Because we are going to do this project in group based, so
 
 
 1.6 PROJECT STAGES 
-																													WEEK
-TASK										START DATE	DUE DATE		WEEK 12	WEEK 13	WEEK 14
-												DAY											MTWTFSS	MTWTFSS	MTWTFSS
-Problem Analysis				26-NOV-18		28-NOV-18		XX
-Make a Proposal					28-NOV-18		30-NOV-18	   	XX
-Submission of Proposal	30-NOV-18		30-NOV-18	       X
-Coding									01-DEC-18		09-DEC-18						XXXXXXX
-Testing									09-DEC-18		10-DEC-18										X
-Final Presentation			11-DEC-18		12-DEC-18					  				 X
+												WEEK
+TASK						START DATE	DUE DATE		WEEK 12	WEEK 13	WEEK 14
+						DAY					MTWTFSS	MTWTFSS	MTWTFSS
+Problem Analysis				26-NOV-18	28-NOV-18		XX
+Make a Proposal					28-NOV-18	30-NOV-18	   	  XX
+Submission of Proposal	                        30-NOV-18	30-NOV-18	            X
+Coding						01-DEC-18	09-DEC-18			XXXXXXX
+Testing						09-DEC-18	10-DEC-18				 X
+Final Presentation			        11-DEC-18	12-DEC-18				  X
 
 
 1.7 SIGNIFICANCE OF THE PROJECT 
