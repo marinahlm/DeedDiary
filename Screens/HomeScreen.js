@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Image } from "react-native";
-
+import Tabbar from 'react-native-tabbar-bottom';
 
 export default class HomeScreen extends Component {
   static navigationOptions = {
     header:null,
   };
+
+  constructor() {
+    super()
+    this.state = {
+      page: "HomeScreen",
+    }
+  }
 
   render() {
     return (
@@ -19,6 +26,35 @@ export default class HomeScreen extends Component {
         <Text></Text>        
         <Button onPress={() => this.props.navigation.navigate('Date')} title="View Deeds" />
         </View>
+        
+        {this.state.page === "HomeScreen"}
+        {this.state.page === "ProfileScreen"}
+        {this.state.page === "InputScreen"}
+        {this.state.page === "CalendarScreen"}
+        
+        <Tabbar stateFunc={(tab) => {
+            this.setState({page: tab.page})
+          }}
+          activePage={this.state.page}
+          tabs={[
+            {
+              page: "HomeScreen",
+              icon: "home",
+            },
+            {
+              page: "ProfileScreen",
+              icon: "person",
+              badgeNumber: 7,
+            },
+            {
+              page: "InputScreen",
+              icon: "pencil",
+            },
+            {
+              page: "CalendarScreen",
+              icon: "chatbubbles",              
+            },
+          ]}></Tabbar>
       </View>
     );
   }

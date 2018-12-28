@@ -8,11 +8,13 @@
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "dependencies": {
+    "native-base": "^2.10.0",
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^1.0.10",
     "react-native-router-flux": "^4.0.6",
+    "react-native-tabbar-bottom": "^1.0.4",
     "react-navigation": "^3.0.5"
   },
   "devDependencies": {

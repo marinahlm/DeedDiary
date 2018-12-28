@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-//import { TabNavigator, TabBarBottom} from "react-navigation";
 import HomeScreen from "./Screens/HomeScreen";
-//import DetailsScreen from "./Screens/DetailsScreen";
 import CalendarScreen from "./Screens/CalendarScreen";
 
 
 const RootStack = createStackNavigator(
   {
-    Home: HomeScreen,
-    //Details: DetailsScreen,
+    Home: HomeScreen,     
     Date: CalendarScreen    
   },
   {

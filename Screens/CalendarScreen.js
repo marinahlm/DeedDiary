@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Button, Icon } from "react-native";
 import DatePicker from 'react-native-datepicker';
+import Tabbar from 'react-native-tabbar-bottom';
 import { TextInput } from "react-native-gesture-handler";
 
-export default class FormScreen extends Component {
+export default class CalendarScreen extends Component {
   static navigationOptions = {
     headerStyle: {
       backgroundColor: "transparent"
@@ -21,9 +22,9 @@ export default class FormScreen extends Component {
     this.state = {
       date: new Date(),
       deed: '',
+      page: "CalendarScreen",
     }
   }
-  //dt = new Date(Date());
 
   okBtn = () => {
     alert('Congratulations!');
@@ -59,10 +60,38 @@ export default class FormScreen extends Component {
         <View  style={styles.btmContainer}>
         <TextInput editable={false} maxLength={100} style={styles.textbox}>Your deeds will be displayed here.</TextInput>
         <Text></Text>
-        {/* <Button style={styles.button} onPress={this.okBtn} title="OK" />  */}
         <Text></Text>
         <Button style={styles.button} onPress={() => this.props.navigation.navigate('Home')} title="Home"></Button>               
         </View>
+
+        {this.state.page === "HomeScreen"}
+        {this.state.page === "ProfileScreen"}
+        {this.state.page === "InputScreen"}
+        {this.state.page === "CalendarScreen"}
+        
+        <Tabbar stateFunc={(tab) => {
+            this.setState({page: tab.page})
+          }}
+          activePage={this.state.page}
+          tabs={[
+            {
+              page: "HomeScreen",
+              icon: "home",
+            },
+            {
+              page: "ProfileScreen",
+              icon: "person",
+              badgeNumber: 7,
+            },
+            {
+              page: "InputScreen",
+              icon: "pencil",
+            },
+            {
+              page: "CalendarScreen",
+              icon: "chatbubbles",              
+            },
+          ]}></Tabbar>
       </View>
     );
   }

@@ -11,8 +11,8 @@ export default class DetailsScreen extends Component {
     }
   }
   
+  //set to today's date
   dt = new Date(Date()); 
- 
 
   saveBtn = () => {
     alert('Nice! You have done a good work there buddy.');
