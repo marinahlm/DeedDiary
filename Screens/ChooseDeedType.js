@@ -36,7 +36,7 @@ export default class ChooseDeedScreen extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
-    //backgroundColor: 'blue',
+    
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 12,
