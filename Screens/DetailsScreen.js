@@ -1,37 +1,54 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity , Button, Image } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-
 
 export default class DetailsScreen extends Component {
   constructor(props){
     super(props)
     this.state = {
-      deed: '',
+      email: '',
+      password: ''
     }
-  }
-  
-  //set to today's date
-  dt = new Date(Date()); 
-
-  saveBtn = () => {
-    alert('Nice! You have done a good work there buddy.');
-  }
+  } 
+  handleEmail = (text) => {  this.setState({ email: text }) }
+  handlePassword = (text) => { this.setState({ password: text }) }
+  login = (email, pass) => { alert('email: ' + email + ' password: ' + pass)   }
 
   render() {
     return (
       <View style={styles.container}>
-        <View>
-        <Text style={styles.header}>Your Deeds</Text>
-        <Text></Text>
-        <Text style={styles.textbox1}>{this.dt.toDateString()}</Text>
-        <Text></Text>              
-        <TextInput editable={true} maxLength={100} style={styles.textbox} placeholder='type your deed here ..'></TextInput>
-        <Text></Text>
-        <Button style={styles.button} onPress={this.saveBtn} title="SAVE" /> 
-        <Text></Text>
-        <Button style={styles.button} onPress={() => this.props.navigation.navigate('Home')} title="HOME"></Button>               
-        </View>
+        <Image source={{
+            uri: 'https://document-export.canva.com/DADM_jqjvi4/8/thumbnail/0001-782013639.png',
+            method: 'POST',
+            headers: {
+              Pragma: 'no-cache',
+            },
+            body: 'Your Body goes here',
+          }}
+          style={{width: 350, height: 350}}
+        />
+
+        <TextInput style = {styles.input}
+        underlineColorAndroid = "transparent"
+        placeholder = "  Email"
+        placeholderTextColor = "#ad9f91"
+        autoCapitalize = "none"
+        onChangeText = {this.handleEmail}/>
+
+        <TextInput style = {styles.input}
+        underlineColorAndroid = "transparent"
+        placeholder = "  Password"
+        placeholderTextColor = "#ad9f91"
+        autoCapitalize = "none"
+        onChangeText = {this.handlePassword}/>
+
+        <TouchableOpacity
+          style = {styles.submitButton}
+          onPress = {
+          () => this.props.navigation.navigate("Prof")
+          }>
+          <Text style = {styles.submitButtonText}> Login </Text>
+        </TouchableOpacity>
       </View>
 
     );
@@ -40,43 +57,21 @@ export default class DetailsScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    backgroundColor: 'pink',
+  paddingTop: 23
   },
-  header: {
-    color:'white',
-    fontSize: 40,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  input: {
+  margin: 15,
+  height: 40,
+  borderColor: '#373b4d',
+  borderWidth: 1
   },
-  textbox: {
-    width:300,
-    height:200,
-    alignContent: 'center',
-    justifyContent: 'space-evenly',
-    borderWidth: 2,
-    borderColor: 'rgba(255,255,255,1)',
-    padding: 10,
+  submitButton: {
+  backgroundColor: '#373b4d',
+  padding: 10,
+  margin: 15,
+  height: 40,
   },
-  textbox1: {
-    textAlign:'center',
-    alignContent: 'center',
-    justifyContent: 'space-evenly',
-    borderWidth: 2,
-    borderColor: 'white',
-    padding: 10,
-    fontSize:20,
-    fontWeight:'bold',
-  },
-  button: {
-    //flexDirection: 'row',
-    width:150,
-    flexDirection: 'column',   
-    justifyContent: 'space-evenly',
-    marginLeft:140,
-    marginBottom: 150,   
+  submitButtonText:{
+  color: 'white'
   }
-});
+ })

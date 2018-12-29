@@ -22,7 +22,6 @@ export default class CalendarScreen extends Component {
     this.state = {
       date: new Date(),
       deed: '',
-      page: "CalendarScreen",
     }
   }
 
@@ -36,7 +35,6 @@ export default class CalendarScreen extends Component {
         <View>
         <Text style={styles.header}>Calendar </Text>
         
-        <Text></Text>
         <DatePicker style={{width: 200}} date={this.state.date} mode="date" placeholder="select date"
         format="DD-MM-YYYY" minDate="01-01-2018"  maxDate="31-12-2019"
         confirmBtnText="Confirm" cancelBtnText="Cancel"
